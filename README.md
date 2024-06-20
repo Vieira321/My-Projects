@@ -47,8 +47,6 @@ A "4 in a Row" game implemented using Three.js. This project shows how to create
 
 ## Installation
 
-### Encryption-Decryption Installation
-
 1. Clone the repository:
    ```sh
    git clone https://github.com/Vieira321/My-Projects.git
