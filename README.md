@@ -13,9 +13,6 @@ In this page are some of my projects, from my academic journey up until now, tha
 - [Usage](#usage)
   - [Encryption-Decryption Usage](#encryption-decryption-usage)
   - [4 in a Row Usage](#4-in-a-row-usage)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
 
 ## Projects
 
