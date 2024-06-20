@@ -45,7 +45,7 @@ A "4 in a Row" game implemented using Three.js. This project shows how to create
 
 1. Clone the repository:
  ```
- git clone https://github.com/your-username/projects.git
+ git clone https://github.com/Vieira321/My-Projects.git
  ```
 2.Navigate to the Encryption-Decryption directory:
  ```
@@ -60,7 +60,7 @@ pip install -r requirements.txt
 
 1.Clone the repository:
 ```
-git clone https://github.com/your-username/projects.git
+git clone https://github.com/Vieira321/My-Projects.git
 ```
 2.Navigate to the 4 in a Row directory:
 ```
