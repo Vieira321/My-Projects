@@ -9,7 +9,7 @@ In this page are some of my projects, from my academic journey up until now, tha
   - [4 in a Row (Three.js)](#4-in-a-row-threejs)
 - [Installation](#installation)
   - [Encryption-Decryption Installation](#encryption-decryption-installation)
-  - [4 in a Row Installation](#4-in-a-row-installation)
+  - [4 in a Row Installation](#4-in-a-row-threejs)
 - [Usage](#usage)
   - [Encryption-Decryption Usage](#encryption-decryption-usage)
   - [4 in a Row Usage](#4-in-a-row-usage)
@@ -50,9 +50,9 @@ A "4 in a Row" game implemented using Three.js. This project shows how to create
 ### Encryption-Decryption Installation
 
 1. Clone the repository:
-   ```
-   git clone https://github.com/your-username/projects.git
-   ```
+ ```
+ git clone https://github.com/your-username/projects.git
+ ```
 2.Navigate to the Encryption-Decryption directory:
  ```
  cd projects/encryption-decryption
