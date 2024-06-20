@@ -10,9 +10,6 @@ In this page are some of my projects, from my academic journey up until now, tha
 - [Installation](#installation)
   - [Encryption-Decryption Installation](#encryption-decryption-installation)
   - [4 in a Row Installation](#4-in-a-row-threejs-1)
-- [Usage](#usage)
-  - [Encryption-Decryption Usage](#encryption-decryption-usage)
-  - [4 in a Row Usage](#4-in-a-row-usage)
 
 ## Projects
 
