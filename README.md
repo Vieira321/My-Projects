@@ -5,14 +5,14 @@ In this page are some of my projects, from my academic journey up until now, tha
 ## Table of Contents
 
 - [Projects](#projects)
-  - [Encryption-Decryption](#encryption-decryption)
-  - [4 in a Row](#4-in-a-row)
+  - [Encryption-Decryption (Python)](#encryption-decryption-python)
+  - [4 in a Row (Three.js)](#4-in-a-row-threejs)
 - [Installation](#installation)
-  - [Encryption-Decryption](#encryption-decryption-installation)
-  - [4 in a Row](#4-in-a-row-installation)
+  - [Encryption-Decryption Installation](#encryption-decryption-installation)
+  - [4 in a Row Installation](#4-in-a-row-installation)
 - [Usage](#usage)
-  - [Encryption-Decryption](#encryption-decryption-usage)
-  - [4 in a Row](#4-in-a-row-usage)
+  - [Encryption-Decryption Usage](#encryption-decryption-usage)
+  - [4 in a Row Usage](#4-in-a-row-usage)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
@@ -47,6 +47,32 @@ A "4 in a Row" game implemented using Three.js. This project shows how to create
 
 ## Installation
 
+### Encryption-Decryption Installation
+
 1. Clone the repository:
-   ```sh
-   git clone https://github.com/Vieira321/My-Projects.git
+   ```
+   git clone https://github.com/your-username/projects.git
+   ```
+2.Navigate to the Encryption-Decryption directory:
+ ```
+ cd projects/encryption-decryption
+```
+3.Install the required dependencies:
+```
+pip install -r requirements.txt
+```
+
+### 4 in a Row (Three.js)
+
+1.Clone the repository:
+```
+git clone https://github.com/your-username/projects.git
+```
+2.Navigate to the 4 in a Row directory:
+```
+cd projects/4-in-a-row
+```
+3.Install the required dependencies:
+```
+npm install
+```
