@@ -1,0 +1,52 @@
+<link rel="stylesheet" href="./images/styles.css">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Conect 4</title>
+    <style>
+        body { margin: 0; }
+    </style>
+</head>
+<body>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: #123456; /* Escolha a cor desejada */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+        canvas {
+            width: 80vw;
+            height: 80vh;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3); /* Opcional: sombra para dar destaque */
+        }
+    </style>
+   
+   <div>
+        <h1 class="h1">Connect 4</h1>
+        <br>
+        <!-- Divisão de butões para ser entuitivo -->
+            <div>
+                <button onclick="EndGame()" class="button">
+                    Voltar
+                </button>
+            </div>
+
+    </div>
+    <script src="./JavaScript/three.js"></script>
+    <script src="./JavaScript/appThree.js"></script>
+
+</body>
+</html>
+
+<script>
+    function EndGame(){
+        window.location.href="index.html";
+}
+</script>
+

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three.js Demo</title>
+    <style>
+        body { margin: 0; overflow: hidden; }
+        canvas { display: block; }
+        .container-lights {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+        .btn-options {
+            display: block;
+            margin-top: 5px;
+        }
+        .button{
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .toggle-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .toggle-button:focus {
+            outline: none;
+        }
+
+        #toggleCameraPanel {
+            right: 100px; /* Ajuste para posicionar ao lado do botão de luzes */
+        }   
+
+        .container-camera {
+            position: absolute;
+            top: 10px; /* Ajuste para não sobrepor o painel de luzes */
+            right: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+
+    </style>
+</head>
+
+<body>
+    <button id="togglePanel" class="toggle-button">Luzes</button>
+    <button id="toggleCameraPanel" class="toggle-button">Câmera</button>
+    <a href="index.html" class="button">Voltar</a>
+    
+    <!--Painel das luzes-->
+    <div id="lightPanel" class="container-lights">
+        <button id="closeLightPanel" class="close-button">X</button>
+        <h1>Luzes</h1>
+        <button id="togglePointLight" class="btn-options">Point Light</button>
+        <button id="toggleDirectionalLight" class="btn-options">Directional Light</button>
+        <button id="toggleAmbientLight" class="btn-options">Ambient Light</button>
+        <br>
+        <label for="rotationSlider">Rotação Direcional</label>
+        <input type="range" id="rotationSlider" min="0" max="360" value="0">
+        <br>
+        <label for="verticalSlider">Posição Vertical</label>
+        <input type="range" id="verticalSlider" min="-180" max="180" value="10">
+    </div>
+
+    <!--Painel das camaras-->
+    <div id="cameraPanel" class="container-camera">
+        <button id="closeCameraPanel" class="close-button">X</button>
+        <h1>Câmara</h1>
+        <button id="toggleCameraButton">Trocar Câmara</button>
+        <button id="resetCameraButton">Reset Camera</button>
+    </div>
+
+
+    <script src="/JavaScript/logica.js"></script>
+    <script async="" src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "http://unpkg.com/three@0.164.1/build/three.module.js",
+                "OrbitControls": "https://unpkg.com/three@0.164.1/examples/jsm/controls/OrbitControls.js",
+                "EXRLoader": "https://unpkg.com/three@0.164.1/examples/jsm/loaders/EXRLoader.js",
+                "GLTFLoader": "https://unpkg.com/three@0.164.1/examples/jsm/loaders/GLTFLoader.js"
+            }
+        }
+    </script>
+
+    <script type="module" src="./JavaScript/appThree.js"></script>
+    <script>
+        document.getElementById('togglePanel').addEventListener('click', function() {
+            const lightPanel = document.getElementById('lightPanel');
+            const cameraButton = document.getElementById('toggleCameraPanel');
+            const lightButton = document.getElementById('togglePanel');
+            const closeLightButton = document.getElementById('closeLightPanel');
+
+            lightPanel.style.display = 'block';
+            cameraButton.style.display = 'none';
+            lightButton.style.display = 'none';
+            closeLightButton.style.display = 'block';
+        });
+
+        document.getElementById('toggleCameraPanel').addEventListener('click', function() {
+            const cameraPanel = document.getElementById('cameraPanel');
+            const lightButton = document.getElementById('togglePanel');
+            const cameraButton = document.getElementById('toggleCameraPanel');
+            const closeCameraButton = document.getElementById('closeCameraPanel');
+
+            cameraPanel.style.display = 'block';
+            lightButton.style.display = 'none';
+            cameraButton.style.display = 'none';
+            closeCameraButton.style.display = 'block';
+        });
+
+        document.getElementById('closeLightPanel').addEventListener('click', function() {
+            const lightPanel = document.getElementById('lightPanel');
+            const cameraButton = document.getElementById('toggleCameraPanel');
+            const lightButton = document.getElementById('togglePanel');
+            const closeLightButton = document.getElementById('closeLightPanel');
+
+            lightPanel.style.display = 'none';
+            cameraButton.style.display = 'block';
+            lightButton.style.display = 'block';
+            closeLightButton.style.display = 'none';
+        });
+
+        document.getElementById('closeCameraPanel').addEventListener('click', function() {
+            const cameraPanel = document.getElementById('cameraPanel');
+            const lightButton = document.getElementById('togglePanel');
+            const cameraButton = document.getElementById('toggleCameraPanel');
+            const closeCameraButton = document.getElementById('closeCameraPanel');
+
+            cameraPanel.style.display = 'none';
+            lightButton.style.display = 'block';
+            cameraButton.style.display = 'block';
+            closeCameraButton.style.display = 'none';
+        });
+    </script>
+</body>
+</html>

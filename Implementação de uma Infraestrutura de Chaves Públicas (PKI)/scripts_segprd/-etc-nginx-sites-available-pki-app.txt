@@ -1,0 +1,34 @@
+server {
+    listen 443 ssl;
+    server_name servidor;
+
+    # Certificado do servidor (gerar este com o script certificates_server.sh)
+    ssl_certificate /home/kali/SEGPRD-Project1/PKI/servers/servidor.cert.pem;
+    ssl_certificate_key /home/kali/SEGPRD-Project1/PKI/servers/servidor.key.pem;
+
+    # Certificado da cadeia (root + intermediate) usado para validar os certificados dos clientes
+    ssl_client_certificate /home/kali/SEGPRD-Project1/PKI/intermediate/certs/ca-chain.cert.pem;
+    ssl_verify_client on;
+
+    # Verifica a profundidade da cadeia de certificados
+    ssl_verify_depth 2;
+
+    # Lista de revogação combinada (Root + Intermédia)
+    ssl_crl /home/kali/SEGPRD-Project1/PKI/intermediate/crl/full-chain.crl.pem;
+
+    # Protocolos e cifrões seguros   
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_ciphers 'ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384';
+    ssl_prefer_server_ciphers on;
+
+    location / {
+        proxy_pass http://127.0.0.1:5000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+        # Header com DN do certificado do cliente
+        proxy_set_header X-SSL-CERT $ssl_client_s_dn;
+        proxy_set_header X-SSL-VERIFY $ssl_client_verify;
+    }
+}
+
