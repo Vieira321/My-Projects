@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Node
+node_modules/
+
+# PKI runtime artefacts (generated when running the scripts — keys must never be committed)
+**/PKI/root/private/
+**/PKI/intermediate/private/
+**/*.key.pem
+**/*.key
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

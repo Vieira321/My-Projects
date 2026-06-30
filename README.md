@@ -1,100 +1,107 @@
-# Projects
+# My Projects
 
-In this page are some of my projects, from my academic journey up until now, that I found interesting to include.
+A curated portfolio of academic and personal projects, organised by domain. My focus is **security engineering** (PKI, vulnerability assessment, applied cryptography), with a secondary track in **applied AI**.
+
+Each project is self‑contained, documented, and reproducible — open any folder and its local `README.md` explains what it does, what it demonstrates, and how to run it. Where a written report exists, it is included as a PDF inside the project's `report/` folder.
+
+---
 
 ## Table of Contents
 
-- [Projects](#projects)
-  - [Encryption-Decryption (Python)](#encryption-decryption-python)
-  - [4 in a Row (Three.js)](#4-in-a-row-threejs)
-  - [PKI Implementation (OpenSSL & NGINX)](#pki-implementation-openssl--nginx)
-- [Installation](#installation)
-  - [Encryption-Decryption Installation](#encryption-decryption-installation)
-  - [4 in a Row Installation](#4-in-a-row-threejs-1)
-  - [PKI Implementation Installation](#pki-implementation-installation)
+- [Security](#security)
+  - [Empirical Evaluation of Security Scanners for Docker Containers](#empirical-evaluation-of-security-scanners-for-docker-containers)
+  - [PKI with mutual TLS (OpenSSL · NGINX · Flask)](#pki-with-mutual-tls-openssl--nginx--flask)
+  - [Caesar Cipher Toolkit (Python)](#caesar-cipher-toolkit-python)
+- [AI](#ai)
+  - [System Automation](#system-automation)
+  - [Second Brain](#second-brain)
+- [Games](#games)
+  - [Connect Four — 3D (Three.js)](#connect-four--3d-threejs)
+- [Repository Structure](#repository-structure)
+- [License](#license)
 
-## Projects
+---
 
-### Encryption-Decryption (Python)
+## Security
 
-A Python project for encrypting and decrypting messages. This project explores different encryption algorithms and demonstrates how they can be implemented in Python.
+### Empirical Evaluation of Security Scanners for Docker Containers
 
-#### Technologies Used
-- Python
-- Cryptography libraries (e.g., `cryptography`)
+A comparative **empirical evaluation of four container vulnerability scanners** — **Trivy, Grype, Snyk, and Docker Scout** — using the **Goal‑Question‑Metric (GQM)** methodology over ten Docker images with distinct risk profiles (clean baselines, EOSL systems, and images carrying Shellshock, SambaCry, Log4Shell, Spring4Shell, and Confluence RCE).
 
-#### Features
-- Message encryption using various algorithms
-- Message decryption
-- Command-line interface for easy use
+The study quantifies real scanner blind spots: a **0% detection rate for Shellshock across all four tools** (source‑compiled software is invisible to metadata scanning), Docker Scout reporting **zero CVEs on EOSL Debian** while finding 848 on Ubuntu 16.04, and a **6.5× spread in vulnerability counts for the same image** (140 vs. 918). It closes with use‑case recommendations and per‑tool performance (Trivy fastest at 4.39 s; Snyk slowest at 19.81 s).
 
-### 4 in a Row (Three.js)
+**Demonstrates:** GQM empirical methodology · hands‑on use of Trivy/Grype/Snyk/Docker Scout · reproducible vulnerable environments with Docker + Vulhub · JSON output parsing and metric analysis in Python
+**Tech:** Docker · Trivy · Grype · Snyk · Docker Scout · Vulhub · Python
+**Details:** [`security/vulnerability-scanner-evaluation/`](./security/vulnerability-scanner-evaluation/) · report included
 
-A "4 in a Row" game implemented using Three.js. This project shows how to create an interactive 3D game using JavaScript and the Three.js library.
+---
 
-#### Technologies Used
-- JavaScript
-- Three.js
+### PKI with mutual TLS (OpenSSL · NGINX · Flask)
 
-#### Features
-- Interactive "4 in a Row" game
-- 3D interface with graphics rendered using Three.js
-- Intuitive controls for playing
+A full **Public Key Infrastructure** built from scratch: a self‑signed **Root CA**, a subordinate **Intermediate CA** that issues end‑entity certificates, and an **NGINX** server enforcing **mutual TLS (mTLS)** — only clients with a valid certificate signed by the chain reach the backend **Flask** app. The certificate lifecycle (issue, **revoke** with CRLs, renew, reissue) is fully scripted behind an interactive menu.
 
-### PKI Implementation (OpenSSL & NGINX)
+**Demonstrates:** two‑tier CA / trust‑chain design · X.509 + CRL management · mTLS client authentication · security automation in Bash/OpenSSL
+**Tech:** Bash · OpenSSL · NGINX · Flask · X.509 · CRL · Linux
+**Details:** [`security/pki-mtls-openssl-nginx/`](./security/pki-mtls-openssl-nginx/) · report included
 
-This project implements a Public Key Infrastructure (PKI) using OpenSSL, providing certificate management through a Root CA and an Intermediate CA. It also includes server protection with mutual TLS authentication via NGINX.
+---
 
-#### Technologies Used
-- Bash scripting
-- OpenSSL
-- NGINX
-- X.509 Certificates
-- CRL (Certificate Revocation Lists)
-- Linux
+### Caesar Cipher Toolkit (Python)
 
-#### Features
-- Creation of Root and Intermediate Certificate Authorities
-- Certificate issuing, renewal, revocation and reissuance
-- CRL generation and concatenation
-- mTLS authentication for protecting backend services with NGINX
+A command‑line cryptography toolkit implementing classic substitution ciphers and frequency analysis from scratch (no crypto libraries): a letter‑frequency histogram, the Caesar shift cipher, a scrambled‑alphabet cipher, and a dual‑key even/odd file cipher.
 
-## Installation
+**Demonstrates:** symmetric ciphers from first principles · frequency analysis · key generation and modular arithmetic
+**Tech:** Python 3 (standard library only)
+**Details:** [`security/caesar-cipher/`](./security/caesar-cipher/)
 
-### Encryption-Decryption Installation
+---
 
-1. Clone the repository:
- ```
- git clone https://github.com/Vieira321/My-Projects.git
- ```
-2.Navigate to the Encryption-Decryption directory:
- ```
- cd projects/encryption-decryption
+## AI
+
+### System Automation
+> _Automation tool that provisions/installs software on a machine. README and project pending — being added._
+
+Lives in [`ai/system-automation/`](./ai/system-automation/).
+
+### Second Brain
+> _A personal knowledge system that links notes into an interconnected graph (Karpathy "LLM Wiki" pattern). The published version contains the engine (ingestion code, schema, templates) and example notes only — no private content. README and code pending — being added._
+
+Lives in [`ai/second-brain/`](./ai/second-brain/).
+
+---
+
+## Games
+
+### Connect Four — 3D (Three.js)
+
+A browser‑based **Connect Four** rendered in 3D with Three.js — full game loop, gravity, turn switching, and 4‑in‑a‑row win detection across all directions, over a glTF scene with custom textures and HDR lighting.
+
+**Demonstrates:** real‑time 3D scene setup · clean separation of game logic from rendering · directional win‑detection algorithm
+**Tech:** JavaScript (ES modules) · Three.js · glTF
+**Details:** [`games/connect-four-3d/`](./games/connect-four-3d/)
+
+---
+
+## Repository Structure
+
 ```
-3.Install the required dependencies:
-```
-pip install -r requirements.txt
-```
-
-### 4 in a Row (Three.js)
-
-1.Clone the repository:
-```
-git clone https://github.com/Vieira321/My-Projects.git
-```
-2.Navigate to the 4 in a Row directory:
-```
-cd projects/4-in-a-row
-```
-3.Install the required dependencies:
-```
-npm install
+My-Projects/
+├── README.md                         # this portfolio index
+├── LICENSE · .gitignore · .gitattributes
+│
+├── security/
+│   ├── vulnerability-scanner-evaluation/   # empirical scanner evaluation (+ report)
+│   ├── pki-mtls-openssl-nginx/             # PKI + mutual TLS (+ report, scripts)
+│   └── caesar-cipher/                      # Python cipher toolkit
+│
+├── ai/
+│   ├── system-automation/                  # software-provisioning automation
+│   └── second-brain/                       # note-graph knowledge system (engine only)
+│
+└── games/
+    └── connect-four-3d/                    # Three.js 3D Connect Four
 ```
 
-### Encryption-Decryption Installation
+## License
 
-1. Clone the repository:
- ```bash
- git clone https://github.com/Vieira321/My-Projects.git
-
- 2.Navigate to the Implementação de uma Infraestrutura de Chaves Públicas (PKI)
+Released under the [MIT License](./LICENSE).
