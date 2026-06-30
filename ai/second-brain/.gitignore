@@ -1,0 +1,18 @@
+# Obsidian / Claude Code local state
+.obsidian/
+.claude/
+
+# Private content — NEVER commit real notes.
+# The whole point: keep your real raw sources and generated pages out of git.
+# (The example files below are the only tracked content under these folders.)
+raw/*
+!raw/example-source.md
+
+wiki/sources/*
+!wiki/sources/The Twelve-Factor App.md
+
+wiki/entities/*
+!wiki/entities/Heroku.md
+
+wiki/concepts/*
+!wiki/concepts/Twelve-Factor App Methodology.md

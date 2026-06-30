@@ -14,7 +14,7 @@ Each project is self‑contained, documented, and reproducible — open any fold
   - [Caesar Cipher Toolkit (Python)](#caesar-cipher-toolkit-python)
 - [AI](#ai)
   - [CEREBRO — AI-Driven Secure Installer](#cerebro--ai-driven-secure-installer)
-  - [Second Brain](#second-brain)
+  - [Second Brain — LLM-Maintained Knowledge Base](#second-brain--llm-maintained-knowledge-base)
 - [Games](#games)
   - [Connect Four — 3D (Three.js)](#connect-four--3d-threejs)
 - [Repository Structure](#repository-structure)
@@ -66,10 +66,13 @@ A natural‑language software installer for Windows: you type *"install Discord"
 **Tech:** Python · tkinter · Anthropic Claude API · winget
 **Details:** [`ai/cerebro-secure-installer/`](./ai/cerebro-secure-installer/)
 
-### Second Brain
-> _A personal knowledge system that links notes into an interconnected graph (Karpathy "LLM Wiki" pattern). The published version contains the engine (ingestion code, schema, templates) and example notes only — no private content. README and code pending — being added._
+### Second Brain — LLM‑Maintained Knowledge Base
 
-Lives in [`ai/second-brain/`](./ai/second-brain/).
+A personal knowledge system where an AI agent (Claude Code) incrementally **compiles raw notes into a heavily interlinked, Wikipedia‑style Obsidian wiki** — building source, entity, and concept pages with bi‑directional links so the assistant answers from *your* accumulated knowledge instead of from scratch. Built on a three‑layer architecture (immutable raw sources → AI‑managed wiki → a `CLAUDE.md` schema) with a strict verbatim‑ingestion rule and a `!lint` health‑check workflow.
+
+**Demonstrates:** designing an agentic compiler with a rule schema · knowledge‑graph / information architecture · prompt/workflow engineering for Claude Code · privacy‑conscious design (engine published, personal notes kept private)
+**Tech:** Claude Code · Obsidian · Markdown
+**Details:** [`ai/second-brain/`](./ai/second-brain/) — engine, templates, and a runnable example (real notes kept private)
 
 ---
 
