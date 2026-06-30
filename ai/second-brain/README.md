@@ -43,6 +43,16 @@ Second-Brain/
 | `!lint` (health check) | Finds orphaned pages and dead links, detects pages filed under the wrong type, flags contradictions between older and newer sources, and proposes fixes before applying them. |
 | `What do we know about <topic>?` | Reads the index and relevant pages and answers with `[[wikilink]]` citations — falling back to general knowledge when the wiki has nothing on the topic. |
 
+## Use cases
+
+The same engine works for any kind of knowledge that compounds over time:
+
+- **A context‑aware coding & study assistant.** Because the agent reads your own notes, it stops giving generic web answers and instead tailors code and explanations to the methods, tools, and level you've actually recorded. If a topic isn't in the wiki, it falls back to general knowledge instead of getting stuck.
+- **Build from theory you've already captured.** You may not have a finished script saved, but if your notes explain *how* something works, the agent can generate the Python/Bash/etc. from scratch — following the exact approach you studied rather than a random one off the internet.
+- **Deep research over weeks or months.** Ingest every paper, article, and report as you find it; the wiki builds an evolving synthesis with entity and concept pages, so a question that spans five sources is already answered because the synthesis was done incrementally.
+- **Course & certification notes.** Feed in each lecture or exercise; the wiki tracks how concepts build on each other and flags when later material updates earlier notes, giving you a personal reference organised by how *you* learned it.
+- **Project knowledge base.** Centralise scattered notes from different tools (docs, clipped pages, course material) into one queryable place, with cross‑links surfacing connections you'd otherwise forget.
+
 ## How this one was built
 
 - Exported a large personal Notion workspace (400+ notes spanning security, DevOps, AI, and personal research) into clean markdown under `raw/`.
