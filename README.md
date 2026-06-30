@@ -13,7 +13,7 @@ Each project is self‑contained, documented, and reproducible — open any fold
   - [PKI with mutual TLS (OpenSSL · NGINX · Flask)](#pki-with-mutual-tls-openssl--nginx--flask)
   - [Caesar Cipher Toolkit (Python)](#caesar-cipher-toolkit-python)
 - [AI](#ai)
-  - [System Automation](#system-automation)
+  - [CEREBRO — AI-Driven Secure Installer](#cerebro--ai-driven-secure-installer)
   - [Second Brain](#second-brain)
 - [Games](#games)
   - [Connect Four — 3D (Three.js)](#connect-four--3d-threejs)
@@ -58,10 +58,13 @@ A command‑line cryptography toolkit implementing classic substitution ciphers 
 
 ## AI
 
-### System Automation
-> _Automation tool that provisions/installs software on a machine. README and project pending — being added._
+### CEREBRO — AI‑Driven Secure Installer
 
-Lives in [`ai/system-automation/`](./ai/system-automation/).
+A natural‑language software installer for Windows: you type *"install Discord"* and an **LLM agent** maps it to the right package, while a multi‑stage pipeline **verifies the installer's source before anything runs** (registered‑domain / trusted‑CDN checks that block unverified third‑party hosts), then hands control back to you to configure the install yourself.
+
+**Demonstrates:** LLM agent design with structured (JSON‑schema) output · supply‑chain trust verification (eTLD+1 domain checks) · human‑in‑the‑loop safety gates · Windows/winget automation
+**Tech:** Python · tkinter · Anthropic Claude API · winget
+**Details:** [`ai/cerebro-secure-installer/`](./ai/cerebro-secure-installer/)
 
 ### Second Brain
 > _A personal knowledge system that links notes into an interconnected graph (Karpathy "LLM Wiki" pattern). The published version contains the engine (ingestion code, schema, templates) and example notes only — no private content. README and code pending — being added._
@@ -95,7 +98,7 @@ My-Projects/
 │   └── caesar-cipher/                      # Python cipher toolkit
 │
 ├── ai/
-│   ├── system-automation/                  # software-provisioning automation
+│   ├── cerebro-secure-installer/           # AI natural-language installer + supply-chain checks
 │   └── second-brain/                       # note-graph knowledge system (engine only)
 │
 └── games/
