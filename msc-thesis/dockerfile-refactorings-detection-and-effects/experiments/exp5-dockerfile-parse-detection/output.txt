@@ -1,0 +1,3 @@
+RUN instructions before: 4
+RUN instructions after: 1
+Refactoring detected: RUN consolidation (4 → 1)
